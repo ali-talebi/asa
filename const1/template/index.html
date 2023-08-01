@@ -1,0 +1,384 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>آینده سازان ایران </title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'site/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'site/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'site/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'site/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  {%  block header %}
+  {%  include 'header.html' %}
+  {%  endblock %}
+  <!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero">
+
+    <div class="info d-flex align-items-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 text-center">
+            <h2 data-aos="fade-down">به آسا خوش آمدید</h2>
+            <p data-aos="fade-up">آینده سازان ایران  </p>
+            <a data-aos="fade-up" data-aos-delay="200" href="#" class="btn-get-started">با لبخند وارد شوید</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+
+      <div class="carousel-item active" style="background-image: url('{% static 'site/assets/img/hero-carousel/hero-carousel-1.jpg' %}')"></div>
+      {%  for i in  info_project %}
+      <div class="carousel-item" style="background-image: url('{{i.pic1.url}}')"></div>
+      {%  endfor %}
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= Get Started Section ======= -->
+    <section id="get-started" class="get-started section-bg">
+      <div class="container">
+
+        <div class="row justify-content-between gy-4">
+
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-up">
+            <div class="content">
+              <h3>پذیرای نظرات شما مخاطبان عزیز میباشیم </h3>
+              <p> از طریق این فرم میتوانید پیام های خود را برای ما ارسال کنید  </p>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="fade">
+            <form  method="POST"   >
+              {% csrf_token %}
+              <h3 dir="rtl">ارسال نظر</h3>
+              <p>ایمیل و شماره تلفن شما منتشر نخواهد شد </p>
+              <div class="row gy-3">
+
+                <div class="col-md-12">
+                  <input type="text" name="name" class="form-control" placeholder="نام" required>
+                </div>
+
+                <div class="col-md-12 ">
+                  <input type="email" class="form-control" name="email" placeholder="ایمیل" required>
+                </div>
+
+                <div class="col-md-12">
+                  <input type="text" class="form-control" name="phone" placeholder="تلفن" required>
+                </div>
+
+                <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="پیام" required></textarea>
+                </div>
+
+
+                <button type="submit">ارسال</button>
+
+
+              </div>
+            </form>
+          </div><!-- End Quote Form -->
+
+        </div>
+
+      </div>
+    </section><!-- End Get Started Section -->
+
+    <!-- ======= Constructions Section ======= -->
+
+    <!-- End Constructions Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>خدمات</h2>
+          <p>خدمات فنی و مهندسی این شرکت در قسمت زیر قابل مشاهده میباشد </p>
+        </div>
+
+        <div class="row gy-4">
+          {% for i in services_total %}
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="fa-solid fa-mountain-city"></i>
+              </div>
+              <h3 > {{i.title}}</h3>
+              <p>{{i.text|safe|truncatewords:50}}</p>
+              <a href="{% url 'project:detail_Services' i.id  %}" class="readmore stretched-link">مطالعه دقیق تر  <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <!-- End Service Item -->
+          {% empty %}
+          <center><p>در حال حاضر شرکت خدمتی ارائه نمیدهد</p></center>
+          {% endfor %}
+
+<!-- End Service Item -->
+
+<!-- End Service Item -->
+<!-- End Service Item -->
+
+<!-- End Service Item -->
+
+<!-- End Service Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Alt Services Section ======= -->
+
+    <!-- End Alt Services Section -->
+
+   
+    <!-- End Features Section -->
+
+    <!-- ======= Our Projects Section ======= -->
+    <section id="projects" class="projects">
+      <div class="container" data-aos="fade-up">
+
+        <div id="projects" class="section-header">
+          <h2>پروژه ها </h2>
+          <p>پروژه های انجام شده در قسمت زیر قابل مشاهده میباشد </p>
+        </div>
+
+        <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order">
+
+          <ul class="portfolio-flters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">همه </li>
+            <li data-filter=".filter-remodeling">باز سازی </li>
+            <li data-filter=".filter-construction">ساخت و ساز </li>
+            <li data-filter=".filter-repairs">تعمیرات</li>
+            <li data-filter=".filter-design">طراحی</li>
+          </ul><!-- End Projects Filters -->
+
+          <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
+            {%  for i in info_project  %}
+            <div class="col-lg-4 col-md-6 portfolio-item {{i.type_project}}">
+              <div class="portfolio-content h-100">
+                <img src="{{i.pic1.url}}" class="img-fluid" alt="">
+                <div class="portfolio-info">
+                  <h4>{{i.type_project}}</h4>
+                  <p>برای مشاهده دقیق تر میتوانید بزرگنمایی کنید با بر روی خواندن بیشتر کلیک فرمایید</p>
+                  <a href="{{i.pic1.url}}" title="بزرگنمایی" data-gallery="portfolio-gallery-remodeling" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
+                  <a href="{% url 'project:detail_project' i.id  %}" title="خواندن بیشتر " class="details-link"><i class="bi bi-link-45deg"></i></a>
+                </div>
+              </div>
+            </div>
+            {%  endfor %}
+            <!-- End Projects Item -->
+
+            <!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+<!-- End Projects Item -->
+
+<!-- End Projects Item -->
+
+          </div><!-- End Projects Container -->
+
+        </div>
+
+      </div>
+    </section><!-- End Our Projects Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>رضایت نامه ها</h2>
+          <p>نظرات قابل مشاهده کاربران در قسمت زیر قابل مشاهده میباشد </p>
+        </div>
+
+        <div class="slides-2 swiper">
+
+          <div class="swiper-wrapper">
+            {%  for i in testimonials %}
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="{{i.author.picture.url}}" class="testimonial-img" alt="">
+                  <h3>{{i.author.user.first_name}}</h3>
+                  <h4>{{i.author.position}}</h4>
+                  <div class="stars">
+                    <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  </div>
+                  <p>
+                    <i class="bi bi-quote quote-icon-left"></i>
+                    {{i.sentence}}
+                    <i class="bi bi-quote quote-icon-right"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+            {%  endfor %}
+            <!-- End testimonial item -->
+
+            <!-- End testimonial item -->
+
+
+            <!-- End testimonial item -->
+
+
+            <!-- End testimonial item -->
+
+
+            <!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    <!-- ======= Recent Blog Posts Section ======= -->
+    <section id="recent-blog-posts" class="recent-blog-posts">
+      <div class="container" data-aos="fade-up"">
+
+    
+    
+  <div class=" section-header">
+        <h2>مقالات اخیر </h2>
+        <p>مقالات اخیر ما در قسمت زیر قابل خواندن میباشد </p>
+      </div>
+
+      <div class="row gy-5">
+        {%  for i in recent_blogs %}
+        <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <center><img src="{{i.head_picture.url}}" class="img-fluid" alt=""></center>
+              <span class="post-date">{{i.time|date:"Y  D"}}</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">{{i.title}}</h3>
+
+              <div class="meta d-flex align-items-center">
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-person"></i> <span class="ps-2">{{i.author.user.first_name}} {{i.author.user.last_name}}</span>
+                </div>
+                <span class="px-3 text-black-50">/</span>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-folder2"></i> <span class="ps-2">{{i.dasteh_bandy}}</span>
+                </div>
+              </div>
+
+              <hr>
+
+              <a href="{% url 'project:detail_blog' i.id  %}" class="readmore stretched-link"><span>خواندن بیشتر</span><i class="bi bi-arrow-right"></i></a>
+
+            </div>
+
+          </div>
+        </div>
+        {%  endfor %}
+        <!-- End post item -->
+
+
+        <!-- End post item -->
+
+
+        <!-- End post item -->
+
+      </div>
+
+      </div>
+    </section>
+    <!-- End Recent Blog Posts Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {% block footer  %}
+  {%  include 'footer.html' %}
+  {%  endblock %}
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'site/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'site/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

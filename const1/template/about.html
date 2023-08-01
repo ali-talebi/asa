@@ -1,0 +1,236 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>UpConstruction Bootstrap Template - About</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'site/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'site/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'site/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'site/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'site/assets/css/main.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction
+  * Updated: May 30 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  {% block header %}
+  {% include 'header.html' %}
+  {% endblock %}
+  <!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'site/assets/img/breadcrumbs-bg.jpg' %}');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>درباره ما </h2>
+        <ol>
+          <li><a href="{% url 'project:Home' %}">خانه</a></li>
+          <li>درباره ما </li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row position-relative">
+
+          <div class="col-lg-7 about-img" style="background-image: url({{hinfo.picture.url}});"></div>
+
+          <div class="col-lg-7">
+            <h2>{{hinfo.title}}</h2>
+            <div class="our-story">
+              <h4>{{hinfo.time}}</h4>
+              <h3>Our Story</h3>
+              {{hinfo.data|safe}}
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======= Stats Counter Section ======= -->
+    <section id="stats-counter" class="stats-counter section-bg">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{len_project_client}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>مشتریان خوشحال </p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{len_project}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>پروژه ها </p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-headset color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{len_project_support}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>میزان ساعت پشتیبانی</p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-people color-pink flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="{{len_info}}" data-purecounter-duration="1" class="purecounter"></span>
+                <p>اعضای شرکت </p>
+              </div>
+            </div>
+          </div><!-- End Stats Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Stats Counter Section -->
+
+    <!-- ======= Alt Services Section ======= -->
+ <!-- End Alt Services Section -->
+
+    <!-- ======= Alt Services Section 2 ======= -->
+  
+    <!-- End Alt Services Section 2 -->
+
+    <!-- ======= Our Team Section ======= -->
+    <section id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-header">
+          <h2>تیم ما  </h2>
+          <p>اعضای تیم آسا در قسمت ذیل قابل معرفی میباشند </p>
+        </div>
+
+        <div class="row gy-5">
+
+
+          <!-- End Team Member -->
+          {% for i in info %}
+          <div class="col-lg-4 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="{{i.picture.url}}" class="img-fluid" alt="">
+              <div class="social">
+                {% if i.twitter  %}
+                  <a href="{{i.twitter}}"><i class="bi bi-twitter"></i></a>
+                {%  endif %}
+                
+                {% if i.faceboob   %}
+                  <a href="{{i.faceboob}}"><i class="bi bi-facebook"></i></a>
+                {% endif %}
+
+                {% if i.instagram %}
+                  <a href="{{i.instagram}}"><i class="bi bi-instagram"></i></a>
+                {% endif %}
+                
+                {% if i.linkedin %}
+                <a href="{{i.linkedin}}"><i class="bi bi-linkedin"></i></a>
+                {% endif %}
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>{{i.user.first_name}} {{i.user.last_name}}</h4>
+              <span>{{i.position}}</span>
+              <span>{{i.fields}}</span>
+              <p>{{i.about_user}}</p>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- End Team Member -->
+
+
+          <!-- End Team Member -->
+
+
+          <!-- End Team Member -->
+
+
+          <!-- End Team Member -->
+
+
+          <!-- End Team Member -->
+
+        </div>
+
+      </div>
+    </section><!-- End Our Team Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  {%  block footer %}
+  {% include 'footer.html' %}
+  {% endblock footer %}
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'site/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
+  <script src="{% static 'site/assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'site/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
